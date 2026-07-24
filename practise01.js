@@ -28,6 +28,15 @@ console.log(Math.floor(Math.random()*(max-min+1)) + min);
 // +1 to avoid zero, +min so that range starts from min, then max-min+1 to define range till max
 
 
+let date = new Date();
+console.log(date);
+console.log(date.toDateString());
+console.log(date.toISOString());
+console.log(date.toJSON());
+console.log(date.toLocaleDateString());
+console.log(typeof date);
+
+
 
 
 
