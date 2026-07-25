@@ -36,6 +36,15 @@ console.log(date.toJSON());
 console.log(date.toLocaleDateString());
 console.log(typeof date);
 
+let createdate = new Date("01-14-2025");
+console.log(createdate);
+console.log(createdate.getTime());
+console.log(Math.floor(createdate.getTime()/1000)); // to get time in seconds
+const currdate = Date.now();
+console.log(currdate);
+
+
+
 
 
 
