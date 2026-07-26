@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body>
+    <div id="title">
+        <!-- NOTE , innerText only shows visible conten on screen, whereas innerContent shows all texts including visible or not visible text , i.e. if used display none styling it will shows up everything -->
+
+        <!-- let heading = document.querySelector('#heading'); heading.innerText; -->
+         <!-- const headings = document.getElementsByClassName('head');
+
+            headings
+            HTMLCollection(4) [h1.head, h1.head, h1.head, h1.head]0: h1.head1: h1.head2: h1.head3: h1.headlength: 4[[Prototype]]: HTMLCollectionitem: ƒ item()length: (...)namedItem: ƒ namedItem()constructor: ƒ HTMLCollection()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "HTMLCollection"get length: ƒ length()[[Prototype]]: Object
+
+            let arr = Array.from(headings);
+            undefined
+
+            arr
+            (4) [h1.head, h1.head, h1.head, h1.head]
+            arr.forEach((h)=>console.log(h));
+            <h1 class=​"head">​hello1​</h1>​
+            <h1 class=​"head">​hello2​</h1>​
+            <h1 class=​"head">​hello3​</h1>​
+            <h1 class=​"head">​hello4​</h1>​ 
+            -->
+        <h1 id="heading">DOM LEARNING</h1>
+        <h1 class="head">hello1</h1>
+        <h1 class="head">hello2</h1>
+        <h1 class="head">hello3</h1>
+        <h1 class="head">hello4</h1>
+
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+
+        <!-- let input = document.querySelector('input[type="password"]'); to access this below input  -->
+        <input type="password" placeholder="enter password ">
+
+        <!-- let myul = document.querySelector('ul');
+            let firstitem = myul.querySelector('li');
+            firstitem.style.color = 'green'; -->
+        <ul>
+
+            <!-- 
+             lists = document.querySelectorAll('li');
+
+            NodeList(3) [li.list-items, li.list-items, li.list-items]0: li.list-items1: li.list-items2: li.list-itemslength: 3[[Prototype]]: NodeListentries: ƒ entries()forEach: ƒ forEach()item: ƒ item()keys: ƒ keys()length: (...)values: ƒ values()constructor: ƒ NodeList()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ length()[[Prototype]]: Object
+
+            lists.forEach((li)=>li.style.color='green');
+             -->
+            <li class="list-items">javascript</li>
+            <li class="list-items">python</li>
+            <li class="list-items">java</li>
+        </ul>
+
+    </div>
+</body>
+</html>
+
+<!-- let para = document.querySelector('p:first-child'); etc can be used with querySelector -->
+ <!-- HTMLCollections is different from NodeList and is all different from Array of js -->
