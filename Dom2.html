@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM </title>
+</head>
+<body>
+    <div class="parent">
+        <div class="class">MONDAY</div>
+        <div class="class">TUESDAY</div>
+        <div class="class">WEDNESDAY</div>
+        <div class="class">THURSDAY</div>
+        <div class="class">FRIDAY</div>
+        <div class="class">SATURDAY</div>
+        <div class="day">SUNDAY</div>
+    </div>
+
+    <ul class="languages">
+        <li>javascript</li>
+    </ul>
+
+</body>
+    <script>
+        let parent = document.querySelector('.parent');
+        // console.log(parent);
+        // console.log(parent.children);
+        // console.log(parent.children[1]);
+        // let childOne = parent.children[1];
+        // console.log(parent.firstElementChild);
+        // console.log(parent.lastElementChild);
+        // console.log(childOne.parentElement);
+        // console.log(childOne.nextElementSibling);
+
+        console.log(parent.childNodes); //It keeps the track of every child infact line change space, consider them as a child too, it is a complex tree structure counts onlt one line break , then no matter how much continuous line break you give it is considered as one only 
+
+        //creation or create elements 
+        let div = document.createElement('div');
+        div.className = 'box';
+        div.id = 'hey';
+        div.style.backgroundColor = 'pink';
+        div.style.padding='24px';
+        // div.innerText = "hey I'm your div";
+        // Or by creating text node add text
+        let addText = document.createTextNode("hey I'm your div , lovely div");
+        div.append(addText);
+        document.body.appendChild(div);
+
+        function addLanguage(langName){
+            const li = document.createElement('li');
+            const txt = document.createTextNode(langName);
+            li.appendChild(txt);
+            const parent = document.querySelector('.languages');
+            parent.appendChild(li);
+        }
+
+        addLanguage("python");
+        addLanguage("java");
+        addLanguage("golang");
+
+        //edit
+        let secondChild = document.querySelector("li:nth-child(2)");
+        let newli = document.createElement('li');
+        let txt = document.createTextNode("C++");
+        newli.appendChild(txt);
+        secondChild.replaceWith(newli);
+
+        //edit way 2
+        let firstchild = document.querySelector('li:first-child');
+        firstchild.outerHTML = '<li>typescript</li>';
+
+        //remove 
+        let lastchild = document.querySelector('li:last-child');
+        lastchild.remove(); // removed golang
+        
+    </script>
+</html>
