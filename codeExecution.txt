@@ -1,0 +1,37 @@
+[] ----> Global Excecution Context (this) -----> Function Excecution Context -----> Eval Excecution Context
+       for browser 'this' points to Window 
+
+phases :
+1) Global Excecution
+2) Memory creation phase (space for variables)
+   All variables are undefined and functions have only their definition
+3) Excecution phase
+   all variables get assigned values & called functions create their own executional context (A new variable environment and execution thread repeat ((2), (3))) After its execution it also delete, i.e. After returning the value to GEC or parent or logging things it gets deleted.
+
+
+> To check if object is empty or not 
+object.keys(obj).length===0
+
+>Nullish coalescing operator (??) : null undefined
+use for database calling e.g:
+
+let val ;
+val = null ?? 10;
+console.log(val); //10
+
+val = undefined ?? 10;
+console.log(val); //10
+
+val = undefined ?? 10 ?? 5;
+console.log(val); //10
+
+let val1 ;
+val1 = 5 ?? 10;
+console.log(val1); // 5
+
+>conditional operator (condition ? true : false), ?:
+
+
+>control statements 
+for, while, do-while loop, switch statement, if-else
+   
