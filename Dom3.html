@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms DOM</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" placeholder="Enter height" id="height">
+        <input type="text" placeholder="Enter weight" id="weight">
+        <button type="submit">submit</button>
+
+        <div id="result">
+
+        </div>
+    </form>
+</body>
+  <script>
+    const form = document.querySelector('form');
+
+    // const height = parseInt(document.querySelector('#height').value); This use case will give you empty value 
+
+    form.addEventListener('submit',(e)=>{
+        e.preventDefault();
+
+        const height = parseInt(document.querySelector('#height').value);
+        const weight = parseInt(document.querySelector('#weight').value);
+
+        const result = document.querySelector('#result');
+        console.log(height, weight);
+
+        // check 
+        if(height === '' || height < 0 || isNaN(height)) // check to see if its not a number
+            result.innerHTML = "Please enter a valid height value";
+
+        else if(weight === '' || weight < 0 || isNaN(weight)) // check to see if its not a number
+            result.innerHTML = "Please enter a valid weight value";
+        else
+           result.innerHTML = (weight/((height*height)/10000)).toFixed(2);
+    })
+  </script>
+</html>
