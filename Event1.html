@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners</title>
+</head>
+<body>
+    <h1>Event Listeners</h1>
+    <button id="hi-btn" >Hello</button>
+    <!-- Javascript is a sequentially running language, event also works sequentially, few exceptions do exists -->
+     <!-- Injecting onclick directly in html, is not scalable , therefore we use eventlisteners for the same, they also give you more features -->
+
+     <button id="stop">Stop</button>
+</body>
+  <script>
+
+    document.querySelector('#hi-btn').addEventListener('click',()=>{
+          console.log("hello is clicked !", Math.floor(Math.random()*10 + 1));
+    }, false);
+    // false here is use for event propogation ({false} event bubbling or {true} event capturing ), bubble inside to outside , neeche se upar jaayega ; capturing is from top to down, e.stopPropogation() is used to stop it; 
+    // e.preventDefault()- used to prevent default behaviour of things elements
+    // e.target.parentNode = to access parent of that element
+    //  .remove(), .removeChild(), e.target.tagName()
+
+    // sync is blocking code vs async is a non-blocking code 
+    // reading file , is a hectic task 
+
+    //  EVENT LOOP (video 37)
+    //  there is yours JS-Engine , WEP-API present in browser
+
+    // setInterval, setTimeout, clearInterval, clearTimeOut are not part of core java, rather web API and other API's
+
+    let btn = document.querySelector('#stop');
+
+    const timeout = setTimeout(function(){
+           btn.innerHTML = "stopping....";
+    }, 2000);
+
+    // it needs a reference of which setTimeOut func 
+   btn.addEventListener('click', ()=>{
+       clearTimeout(timeout, 1000);
+       console.log("clear time out is running");
+       
+   }, false);
+
+   //set Interval
+
+   function sayDate(params){
+     let date = Date.now();
+    console.log(date, params);
+   }
+
+   let hiInterval = setInterval(sayDate, 2000, "hi"); // can be passes 3rd parameter
+
+   let stopInterval = document.querySelector('#hi-btn');
+   stopInterval.addEventListener('click', ()=>{
+        clearInterval(hiInterval, 1000); // to clear interval 
+   }, false);
+
+  </script>
+</html>
