@@ -1,4 +1,0 @@
-# AI JARGONS
-
-### LLM : 
-
