@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>click me</button>
+</body>
+<script>
+
+    class React{
+        constructor(){
+            this.server='https://localhost:3000';
+
+            document
+                .querySelector('button')
+                // .addEventListener('click', this.handleClick, false);  (1)
+                .addEventListener('click', this.handleClick.bind(this), false); // (2) Now here goes all this references like variables like server ...
+        }
+
+        handleClick(){
+            console.log('button is clicked');
+            console.log(this);
+            console.log(this.server); // (1) this is coming undefined but 'this' k reference h cuz on logging this wo button ko refer kr rha h
+            
+        }
+    }
+
+    const react = new React();
+
+</script>
+</html>
